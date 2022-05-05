@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ETSIDI.h"
+#include "freeglut.h"
 
 int main()
 {
