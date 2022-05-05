@@ -18,5 +18,13 @@
     <ClCompile Include="Jaque-bot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pieza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Pieza.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
