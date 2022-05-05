@@ -21,9 +21,51 @@
     <ClCompile Include="Pieza.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="V2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Peon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reina.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Torre.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Alfil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Caballo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pieza.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="V2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Peon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reina.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Torre.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Alfil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Caballo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

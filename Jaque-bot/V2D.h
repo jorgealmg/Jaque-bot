@@ -1,0 +1,8 @@
+#pragma once
+class V2D
+{
+public:
+	V2D(int xv = 0, int yv = 0) : x(xv), y(yv) {};
+	int x, y;
+};
+
