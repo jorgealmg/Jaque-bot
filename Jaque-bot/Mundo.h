@@ -1,5 +1,5 @@
 #pragma once
-#include "..\Tablero.h"
+#include "Tablero.h"
 
 
 class Mundo
