@@ -45,12 +45,6 @@
     <ClCompile Include="Regla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ModoJuego.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tablero.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pieza.h">

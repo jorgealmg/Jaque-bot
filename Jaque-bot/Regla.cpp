@@ -35,6 +35,11 @@ void Regla::jaque(Peon& pe, Rey& ry)
 
 }
 
+/*bool Regla::casillaocupada(int x, int y, Tablero& tab) {
+	if (tab[x][y] == '') return true;
+	else return false;
+}*/
+
 void Regla::borrarpieza(Pieza& p) {
 	delete& p;
 }

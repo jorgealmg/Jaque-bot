@@ -153,9 +153,7 @@
     <ClCompile Include="V2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mundo.h" />
     <ClInclude Include="Tablero.h" />
-    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
     <ClInclude Include="ModoJuego.h" />
@@ -166,9 +164,6 @@
     <ClInclude Include="Rey.h" />
     <ClInclude Include="Torre.h" />
     <ClInclude Include="V2D.h" />
-
-
-
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
