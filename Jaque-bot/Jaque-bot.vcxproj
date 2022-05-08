@@ -144,7 +144,6 @@
     <ClCompile Include="Alfil.cpp" />
     <ClCompile Include="Caballo.cpp" />
     <ClCompile Include="Jaque-bot.cpp" />
-    <ClCompile Include="ModoJuego.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
     <ClCompile Include="Regla.cpp" />
@@ -154,6 +153,9 @@
     <ClCompile Include="V2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Mundo.h" />
+    <ClInclude Include="Tablero.h" />
+    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
     <ClInclude Include="ModoJuego.h" />
@@ -164,6 +166,9 @@
     <ClInclude Include="Rey.h" />
     <ClInclude Include="Torre.h" />
     <ClInclude Include="V2D.h" />
+
+
+
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
