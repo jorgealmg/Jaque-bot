@@ -8,6 +8,7 @@
 #include "Rey.h"
 #include "Caballo.h"
 #include "Torre.h"
+#include "Tablero.h"
 
 using namespace ETSIDI;
 
@@ -15,7 +16,11 @@ void inicio();
 
 int main()
 {
+	Tablero tablero;
 	inicio();
 }
 
-void inicio() {}
+void inicio() {
+
+}
+

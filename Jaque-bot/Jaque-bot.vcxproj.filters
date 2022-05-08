@@ -48,6 +48,9 @@
     <ClCompile Include="ModoJuego.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tablero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pieza.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ModoJuego.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,3 +35,7 @@ void Regla::jaque(Peon& pe, Rey& ry)
 
 }
 
+void Regla::borrarpieza(Pieza& p) {
+	delete& p;
+}
+
