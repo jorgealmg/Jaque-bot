@@ -1,4 +1,4 @@
-#include "ModosJuego.h"
+#include "ModoJuego.h"
 
 void ModosJuego::setTurno(bool t)
 {

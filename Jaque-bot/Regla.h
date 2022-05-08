@@ -2,6 +2,11 @@
 
 #include "Pieza.h"
 #include "Peon.h"
+#include "Reina.h"
+#include "Alfil.h"
+#include "Rey.h"
+#include "Caballo.h"
+#include "Torre.h"
 
 class Regla
 {
@@ -14,4 +19,3 @@ class Regla
 
 	static void jaque(Peon& pe, Rey& ry); //jaque
 };
-
