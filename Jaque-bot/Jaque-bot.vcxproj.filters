@@ -18,7 +18,6 @@
     <ClCompile Include="Jaque-bot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-
     <ClCompile Include="Tablero.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -50,12 +49,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Caballo.cpp">
-
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Casilla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-
     <ClInclude Include="Mundo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,7 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Caballo.h">
-      
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Casilla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
