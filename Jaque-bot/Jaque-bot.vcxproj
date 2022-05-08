@@ -78,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)\bin</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -143,16 +144,19 @@
   <ItemGroup>
     <ClCompile Include="Alfil.cpp" />
     <ClCompile Include="Caballo.cpp" />
+    <ClCompile Include="Casilla.cpp" />
     <ClCompile Include="Jaque-bot.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
     <ClCompile Include="Regla.cpp" />
     <ClCompile Include="Reina.cpp" />
     <ClCompile Include="Rey.cpp" />
+    <ClCompile Include="Tablero.cpp" />
     <ClCompile Include="Torre.cpp" />
     <ClCompile Include="V2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Casilla.h" />
     <ClInclude Include="Tablero.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
