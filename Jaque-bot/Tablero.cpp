@@ -1,6 +1,6 @@
 #include "Tablero.h"
 
-Tablero::Tablero() :tablero0("bin\\Imagenes\\tablero0.png", 1, 1, 220)
+Tablero::Tablero() :tablero0("tablero0.png", 1, 1, 220)
 {
 	setLado(10);
 	tablero0.setCenter(0.0, 0.0);
