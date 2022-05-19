@@ -145,9 +145,13 @@
     <ClCompile Include="Alfil.cpp" />
     <ClCompile Include="Caballo.cpp" />
     <ClCompile Include="Casilla.cpp" />
+    <ClCompile Include="Coordinador.cpp" />
     <ClCompile Include="Jaque-bot.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mundo.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
+    <ClCompile Include="PInicio.cpp" />
     <ClCompile Include="Regla.cpp" />
     <ClCompile Include="Reina.cpp" />
     <ClCompile Include="Rey.cpp" />
@@ -157,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Casilla.h" />
+    <ClInclude Include="Coordinador.h" />
+    <ClInclude Include="Mundo.h" />
+    <ClInclude Include="PInicio.h" />
     <ClInclude Include="Tablero.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
