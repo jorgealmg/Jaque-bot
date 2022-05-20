@@ -26,4 +26,3 @@ public:
 	Casilla Tab[8][8];
 
 };
-

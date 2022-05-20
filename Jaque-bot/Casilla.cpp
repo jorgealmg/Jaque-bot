@@ -15,7 +15,7 @@ void Casilla::setColor(bool c)
 
 }
 
-void Casilla::setPosReal(Vector2D p)
+void Casilla::setPosReal(V2D p)
 {
 	PosReal.x = p.x;
 	PosReal.y = p.y;

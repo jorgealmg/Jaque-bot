@@ -1,21 +1,19 @@
 #pragma once
-#include "Vector2D.h"
 
 class Casilla
 {
-	
-	public:
-		int letra, numero;
-		Vector2D PosReal;
-		bool color; //0 negro, 1 blanco
-		bool ocupacion; //0 ocupada, 1 libre
 
-	public:
-		Casilla();
-		void setColor(bool color);
-		void setPosReal(Vector2D p);
+public:
+	V2D PosReal;
+	int letra, numero;
+	bool color; //0 negro, 1 blanco
+	bool ocupacion; //0 ocupada, 1 libre
 
-		void setPosicion(int l, int n);
+public:
+	Casilla();
+	void setPosReal(V2D p);
+	void setColor(bool color);
+	void setPosicion(int l, int n);
 
 };
 

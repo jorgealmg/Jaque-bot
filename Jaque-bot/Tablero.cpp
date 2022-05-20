@@ -45,6 +45,8 @@ Tablero::Tablero() :tablero0("bin/Imagenes/tablero0.png", 1, 1, 220)
 
 		}
 
+	}
+
 }
 
 void Tablero::setLado(float l)
