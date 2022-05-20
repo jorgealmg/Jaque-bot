@@ -71,6 +71,8 @@ void Tablero::dibuja()
 }
 
 
+
+
 Casilla* Tablero::getCasilla(V2D pos) {
 
 	return &Tab[pos.x][pos.y];
@@ -79,12 +81,93 @@ Casilla* Tablero::getCasilla(V2D pos) {
 
 bool Tablero::obstaculo(V2D origen, V2D destino) {
 
+	V2D res = origen - destino;
 	int ocupacion = 0;
+	if ((abs(res.x)==abs(res.y)) && (origen.x < destino.x) && (origen.y < destino.y)) {
+		for (int i = origen.x; i < destino.x; i++) {
+			for (int j = origen.y; j < destino.y; j++) {
+				V2D v;
+				v.x = i;
+				v.y = j;
 
-	for (int i = origen.x; i < destino.x; i++) {
+				Casilla* c;
+				c = getCasilla(v);
+				if (c->casillaVacia() == false)
+					ocupacion++;
+			}
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+
+	else if ((abs(res.x) == abs(res.y)) && (origen.x > destino.x) && (origen.y > destino.y)) {
+
+		for (int i = origen.x; i > destino.x; i--) {
+			for (int j = origen.y; j > destino.y; j--) {
+				V2D v;
+				v.x = i;
+				v.y = j;
+
+				Casilla* c;
+				c = getCasilla(v);
+				if (c->casillaVacia() == false)
+					ocupacion++;
+			}
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+
+	else if ((abs(res.x) == abs(res.y)) && (origen.x > destino.x) && (origen.y < destino.y)) {
+		for (int i = origen.x; i > destino.x; i--) {
+			for (int j = origen.y; j < destino.y; j++) {
+				V2D v;
+				v.x = i;
+				v.y = j;
+
+				Casilla* c;
+				c = getCasilla(v);
+				if (c->casillaVacia() == false)
+					ocupacion++;
+			}
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+
+	else if ((abs(res.x) == abs(res.y)) && (origen.x < destino.x) && (origen.y > destino.y)) {
+		for (int i = origen.x; i < destino.x; i++) {
+			for (int j = origen.y; j > destino.y; j--) {
+				V2D v;
+				v.x = i;
+				v.y = j;
+
+				Casilla* c;
+				c = getCasilla(v);
+				if (c->casillaVacia() == false)
+					ocupacion++;
+			}
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+	else if ((origen.x == destino.x) && (origen.y < destino.y)) {
+		
 		for (int j = origen.y; j < destino.y; j++) {
 			V2D v;
-			v.x = i;
+			v.x = origen.x;
 			v.y = j;
 
 			Casilla* c;
@@ -92,16 +175,80 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 			if (c->casillaVacia() == false)
 				ocupacion++;
 		}
+		
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
 	}
 
-	if (ocupacion >= 1)
-		return true;
+	else if ((origen.x == destino.x) && (origen.y > destino.y)) {
+
+		for (int j = origen.y; j > destino.y; j--) {
+			V2D v;
+			v.x = origen.x;
+			v.y = j;
+
+			Casilla* c;
+			c = getCasilla(v);
+			if (c->casillaVacia() == false)
+				ocupacion++;
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+
+	else if ((origen.x < destino.x) && (origen.y == destino.y)) {
+		for (int i = origen.x; i < destino.x; i++) {
+			
+			V2D v;
+			v.x = i;
+			v.y = origen.y;
+
+			Casilla* c;
+			c = getCasilla(v);
+			if (c->casillaVacia() == false)
+				ocupacion++;
+			
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+
+	else if ((origen.x > destino.x) && (origen.y == destino.y)) {
+		for (int i = origen.x; i > destino.x; i--) {
+
+			V2D v;
+			v.x = i;
+			v.y = origen.y;
+
+			Casilla* c;
+			c = getCasilla(v);
+			if (c->casillaVacia() == false)
+				ocupacion++;
+
+		}
+
+		if (ocupacion >= 1)
+			return true;
+		else
+			return false;
+	}
+
 	else
-		return false;
+	return false; //es un caballo
+
+
 }
 
 void Tablero::Mueve(Casilla *origen,Casilla* destino) {
-	if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == 1) && obstaculo(origen->p->pos, destino->p->pos) != 0) {
+	if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
 		destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 		origen->setPiezaVacia(V);
 	}

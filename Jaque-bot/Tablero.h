@@ -29,6 +29,8 @@ public:
 	Casilla Tab[8][8];
 
 	Casilla* getCasilla(V2D pos);
+
+	void inicializa();
 	
 	bool obstaculo(V2D origen, V2D destino);
 
