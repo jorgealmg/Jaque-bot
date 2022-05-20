@@ -6,5 +6,7 @@ class Rey :
 public:
     Rey(char c, char t) : Pieza(c, t) {};
     void mueve();
+    bool movimientoValido(V2D origen, V2D destino);
+
 };
 

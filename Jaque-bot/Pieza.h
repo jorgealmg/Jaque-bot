@@ -1,5 +1,6 @@
 #pragma once
 #include "V2D.h"
+#include <math.h>
 
 class Pieza
 {
