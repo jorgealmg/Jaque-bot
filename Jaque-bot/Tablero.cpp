@@ -69,3 +69,40 @@ void Tablero::dibuja()
 
 
 }
+
+
+Casilla* Tablero::getCasilla(V2D pos) {
+
+	return &Tab[pos.x][pos.y];
+}
+
+
+bool Tablero::obstaculo(V2D origen, V2D destino) {
+
+	int ocupacion = 0;
+
+	for (int i = origen.x; i < destino.x; i++) {
+		for (int j = origen.y; j < destino.y; j++) {
+			V2D v;
+			v.x = i;
+			v.y = j;
+
+			Casilla* c;
+			c = getCasilla(v);
+			if (c->casillaVacia() == false)
+				ocupacion++;
+		}
+	}
+
+	if (ocupacion >= 1)
+		return true;
+	else
+		return false;
+}
+
+void Tablero::Mueve(Casilla *origen,Casilla* destino) {
+	if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == 1) && obstaculo(origen->p->pos, destino->p->pos) != 0) {
+		destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+		origen->setPiezaVacia(V);
+	}
+}

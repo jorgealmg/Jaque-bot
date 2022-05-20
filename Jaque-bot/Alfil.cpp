@@ -1,5 +1,6 @@
 #include "Alfil.h"
 
+
 void Alfil::mueve() {}
 
 bool Alfil::movimientoValido(V2D origen, V2D destino) {
@@ -12,3 +13,4 @@ bool Alfil::movimientoValido(V2D origen, V2D destino) {
 		return false;
 
 }
+
