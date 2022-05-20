@@ -1,4 +1,5 @@
 #pragma once
+#include "V2D.h"
 
 class Casilla
 {
