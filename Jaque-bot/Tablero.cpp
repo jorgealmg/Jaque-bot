@@ -297,6 +297,7 @@ void Tablero::Mueve(Casilla *origen,Casilla* destino) {
 		}
 	}
 
+
 	else if (origen->p->getTipo() == P) {
 		if (origen->p->comerPeon(origen->PosReal, destino->PosReal) == true) {
 			if (destino->casillaVacia() == false) {
