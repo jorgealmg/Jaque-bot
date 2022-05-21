@@ -7,3 +7,4 @@ char Pieza::getColor() {
 char Pieza::getTipo() {
 	return tipo;
 }
+
