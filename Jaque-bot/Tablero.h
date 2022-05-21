@@ -39,6 +39,8 @@ public:
 
 	void comerPieza(Casilla *origen, Casilla * destino);
 
+	void coronar(Casilla* c);
+
 	void Mueve(Casilla* origen, Casilla* destino);
 
 	bool setTurno(int *movimiento, Casilla *origen);
