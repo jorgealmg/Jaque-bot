@@ -17,7 +17,6 @@ public:
 
 protected:
 	Mundo mundo;
-	PInicio PIN;
 	Tablero tablero;
 
 	enum Estado { INICIO, JvJ, JvAI, CONF };

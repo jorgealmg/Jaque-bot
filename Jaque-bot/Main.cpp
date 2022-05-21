@@ -1,4 +1,4 @@
-#include "Mundo.h"
+/*#include "Mundo.h"
 #include "Coordinador.h"
 #include "freeglut.h"
 
@@ -82,4 +82,4 @@ void onSpecialKeyboardDown(int key, int x, int y)
 {
 	mundo.teclaEspecial(key);
 	glutPostRedisplay();
-}
+}*/

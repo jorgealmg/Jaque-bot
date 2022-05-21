@@ -9,11 +9,14 @@
 #include "Caballo.h"
 #include "Torre.h"
 #include "Tablero.h"
+#include "Coordinador.h"
 
 using namespace ETSIDI;
 
+Coordinador coordin;
 Tablero tablero;
-
+void OnKeyboardDown(unsigned char key, int x, int y);
+void onSpecialKeyboardDown(int key, int x, int y);
 void OnDraw(void);
 void OnTimer(int value);
 void inicio();
@@ -32,7 +35,8 @@ int main(int argc, char* argv[])
 	gluPerspective(40.0, 800 / 600.0f, 0.1, 150);
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
-	
+	glutKeyboardFunc(OnKeyboardDown);
+	glutSpecialFunc(onSpecialKeyboardDown);
 
 	OnDraw();
 	glutMainLoop();
@@ -54,16 +58,22 @@ void OnDraw(void)
 		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 10.0, 0.0);      // definimos hacia arriba (eje Y)    
 
-	tablero.dibuja();
-
+	coordin.dibuja();
 
 	glTranslatef(-4.2, 3, 0);
 	glColor3ub(255, 255, 0);
 	glutSolidCube(1.1);
 	glTranslatef(4.2, -3, 0);
-
+	glutPostRedisplay();
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
+}
+
+void OnKeyboardDown(unsigned char key, int x_t, int y_t)
+{
+	//poner aqui el código de teclado
+	coordin.tecla(key);
+	glutPostRedisplay();
 }
 
 void OnTimer(int value)
@@ -79,3 +89,8 @@ void inicio() {
 
 }
 
+void onSpecialKeyboardDown(int key, int x, int y)
+{
+	//mundo.teclaEspecial(key);
+	//glutPostRedisplay();
+}

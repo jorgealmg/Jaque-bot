@@ -19,7 +19,9 @@ public:
 	Mundo();
 
 	void tecla(unsigned char key);
+
 private:
+
 	int x_ojo, y_ojo, z_ojo;
 
 };
