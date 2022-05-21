@@ -89,12 +89,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,14 +103,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -121,12 +117,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,37 +133,38 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Alfil.cpp" />
     <ClCompile Include="Caballo.cpp" />
     <ClCompile Include="Casilla.cpp" />
+    <ClCompile Include="Coordinador.cpp" />
     <ClCompile Include="Jaque-bot.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mundo.cpp" />
-    <ClCompile Include="Tablero.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
+    <ClCompile Include="PInicio.cpp" />
     <ClCompile Include="Regla.cpp" />
     <ClCompile Include="Reina.cpp" />
     <ClCompile Include="Rey.cpp" />
+    <ClCompile Include="Tablero.cpp" />
     <ClCompile Include="Torre.cpp" />
     <ClCompile Include="V2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Casilla.h" />
+    <ClInclude Include="Coordinador.h" />
     <ClInclude Include="Mundo.h" />
+    <ClInclude Include="PInicio.h" />
     <ClInclude Include="Tablero.h" />
-    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
     <ClInclude Include="ModoJuego.h" />

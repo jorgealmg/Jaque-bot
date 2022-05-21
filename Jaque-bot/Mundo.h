@@ -1,20 +1,47 @@
-#pragma once
-#include "Tablero.h"
+#include "Mundo.h"
+#include "freeglut.h"
+#include <math.h>
 
 
-class Mundo
+void Mundo::rotarOjo()
 {
-public:
-	void tecla(unsigned char key);
-	void inicializa();
-	void rotarOjo();
-	void mueve();
-	void dibuja();
+	float dist = sqrt(x_ojo * x_ojo + z_ojo * z_ojo);
+	float ang = atan2(z_ojo, x_ojo);
+	ang += 0.5f;
+	x_ojo = dist * cos(ang);
+	z_ojo = dist * sin(ang);
+}
 
-	float x_ojo;
-	float y_ojo;
-	float z_ojo;
+void Mundo::inicializa()
+{
 
-	Tablero tablero;
+}
 
-};
+void Mundo::dibuja()
+{
+	gluLookAt(x_ojo, y_ojo, z_ojo,
+		0.0, 0, 0.0,
+		0.0, 10.0, 0.0);
+}
+
+void Mundo::teclaEspecial(unsigned char key)
+{
+
+}
+
+void Mundo::mueve()
+{
+
+}
+
+Mundo::Mundo()
+{
+	x_ojo = 0;
+	y_ojo = 0;
+	z_ojo = 15;
+}
+
+void Mundo::tecla(unsigned char key)
+{
+
+}

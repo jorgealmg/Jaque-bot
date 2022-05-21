@@ -54,6 +54,18 @@
     <ClCompile Include="Casilla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PInicio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mundo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mundo.h">
@@ -90,6 +102,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Casilla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PInicio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mundo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
