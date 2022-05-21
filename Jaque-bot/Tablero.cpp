@@ -1,12 +1,12 @@
 #include "Tablero.h"
 
-Tablero::Tablero() :tablero0("bin\\Imagenes\\tablero0.png", 1, 1, 220)
+Tablero::Tablero() :tablero0("bin/Imagenes/tablero0.png", 1, 1, 220)
 {
 	setLado(10);
 	tablero0.setCenter(0.0, 0.0);
 	tablero0.setSize(lado, lado);
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8;i++)
 	{
 		for (int j = 0; j < 8; j++)
 		{

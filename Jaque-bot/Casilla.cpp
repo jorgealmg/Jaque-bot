@@ -28,3 +28,4 @@ void Casilla::setPosicion(int l, int n)
 	numero = n;
 
 }
+

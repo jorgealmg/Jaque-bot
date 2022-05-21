@@ -89,10 +89,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>lib src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,6 +148,9 @@
     <ClCompile Include="Caballo.cpp" />
     <ClCompile Include="Casilla.cpp" />
     <ClCompile Include="Jaque-bot.cpp" />
+    <ClCompile Include="Mundo.cpp" />
+    <ClCompile Include="Tablero.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
     <ClCompile Include="Regla.cpp" />
@@ -157,7 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Casilla.h" />
+    <ClInclude Include="Mundo.h" />
     <ClInclude Include="Tablero.h" />
+    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />
     <ClInclude Include="ModoJuego.h" />
