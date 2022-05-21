@@ -117,12 +117,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
