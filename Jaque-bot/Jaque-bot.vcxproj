@@ -151,7 +151,6 @@
     <ClCompile Include="Mundo.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
-    <ClCompile Include="PInicio.cpp" />
     <ClCompile Include="Regla.cpp" />
     <ClCompile Include="Reina.cpp" />
     <ClCompile Include="Rey.cpp" />
@@ -163,7 +162,6 @@
     <ClInclude Include="Casilla.h" />
     <ClInclude Include="Coordinador.h" />
     <ClInclude Include="Mundo.h" />
-    <ClInclude Include="PInicio.h" />
     <ClInclude Include="Tablero.h" />
     <ClInclude Include="Alfil.h" />
     <ClInclude Include="Caballo.h" />

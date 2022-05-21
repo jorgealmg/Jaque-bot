@@ -1,6 +1,6 @@
 #include "PInicio.h"
 
-PInicio::PInicio():PAGINA_INICIO("bin/Imagenes/PAGINA_INICIO.png", 1, 1, 220)
+PInicio::PInicio():PAGINA_INICIO("PANTALLA_INICIO.png", 1, 1, 220)
 {
 	setLado(10);
 	PAGINA_INICIO.setCenter(0.0, 0.0);

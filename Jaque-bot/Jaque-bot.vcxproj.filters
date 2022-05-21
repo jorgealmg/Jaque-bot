@@ -51,9 +51,6 @@
     <ClCompile Include="Casilla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PInicio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Mundo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -99,9 +96,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Casilla.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PInicio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Mundo.h">
