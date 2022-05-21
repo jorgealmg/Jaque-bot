@@ -252,4 +252,16 @@ void Tablero::Mueve(Casilla *origen,Casilla* destino) {
 		destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 		origen->setPiezaVacia(V);
 	}
+
+	if (destino->casillaVacia() == false)
+		comerPieza(origen, destino);
+}
+
+
+void Tablero::comerPieza(Casilla* origen, Casilla* destino)
+{
+	delete& destino->p;
+	destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+	origen->setPiezaVacia(V);
+
 }

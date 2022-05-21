@@ -34,6 +34,8 @@ public:
 	
 	bool obstaculo(V2D origen, V2D destino);
 
+	void comerPieza(Casilla *origen, Casilla * destino);
+
 	void Mueve(Casilla* origen, Casilla* destino);
 
 };
