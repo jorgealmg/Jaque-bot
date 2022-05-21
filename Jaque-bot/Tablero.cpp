@@ -285,13 +285,32 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 }
 
 void Tablero::Mueve(Casilla *origen,Casilla* destino) {
-	if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
-		destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
-		origen->setPiezaVacia(V);
+
+	if (origen->p->getTipo() != P) {
+		if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
+			if (destino->casillaVacia() == false)
+				comerPieza(origen, destino);
+			else {
+				destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+				origen->setPiezaVacia(V);
+			}
+		}
 	}
 
-	if (destino->casillaVacia() == false)
-		comerPieza(origen, destino);
+	else if (origen->p->getTipo() == P) {
+		if (origen->p->comerPeon(origen->PosReal, destino->PosReal) == true) {
+			if (destino->casillaVacia() == false)
+				comerPieza(origen, destino);
+		}
+
+		else if (origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true  && obstaculo(origen->p->pos, destino->p->pos) == false)
+			if (destino->casillaVacia() == true) {
+				destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+				origen->setPiezaVacia(V);
+			}
+	
+	}
+
 }
 
 
