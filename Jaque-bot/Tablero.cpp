@@ -7,7 +7,7 @@ Tablero::Tablero() :tablero0("tablero0.png", 1, 1, 220)
 	tablero0.setSize(lado, lado);
 	movimiento = 0;
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8;i++)
 	{
 		for (int j = 0; j < 8; j++)
 		{
