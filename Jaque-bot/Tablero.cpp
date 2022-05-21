@@ -5,6 +5,7 @@ Tablero::Tablero() :tablero0("tablero0.png", 1, 1, 220)
 	setLado(10);
 	tablero0.setCenter(0.0, 0.0);
 	tablero0.setSize(lado, lado);
+	movimiento = 0;
 
 	for (int i = 0; i < 8; i++)
 	{
@@ -80,14 +81,9 @@ void Tablero::inicializa(){
 				Tab[i][j].setPieza(Tab[i][j].p, P, N);
 			else
 				Tab[i][j].setPiezaVacia(V);
-			
-
 		}
 	}
 	
-	
-
-
 }
 
 void Tablero::setLado(float l)
@@ -304,5 +300,26 @@ void Tablero::comerPieza(Casilla* origen, Casilla* destino)
 	delete& destino->p;
 	destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 	origen->setPiezaVacia(V);
+
+}
+
+
+bool Tablero::setTurno(int *movimiento, Casilla * origen) {
+
+	if ((*movimiento % 2 == 0) && origen->p->getColor() == N)  //mueven negras
+		return true;
+	else if ((*movimiento % 2 != 0) && origen->p->getColor() == B) //mueven blancas
+		return true;
+	else return false;
+
+}
+
+void Tablero::hacerMovimiento(Casilla* origen, Casilla* destino) {
+	if (setTurno(&movimiento, origen)) {
+		Mueve(origen, destino);
+		movimiento++;
+	}
+	else
+		cout << "movimiento incorrecto" << endl;
 
 }
