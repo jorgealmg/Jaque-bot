@@ -29,3 +29,33 @@ void Casilla::setPosicion(int l, int n)
 
 }
 
+
+void Casilla::setPieza(Pieza *pie,char tipo, char color)
+{
+	p = pie;
+	tipo = p->tipo;
+	color = p->color;
+
+}
+
+void Casilla::setPiezaVacia(char tipo)
+{
+	tipo = p->tipo;
+}
+
+Pieza* Casilla::getPieza() {
+	return p;
+}
+
+
+bool Casilla::casillaVacia() {
+
+	Pieza *pieza = getPieza();
+
+	if (pieza->tipo == V)
+		return true;
+	else
+		return false;
+}
+
+

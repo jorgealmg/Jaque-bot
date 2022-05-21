@@ -11,7 +11,7 @@
 
 class Regla
 {
-	static void comer(Peon& pe, Pieza& p);
+	static void comer(Peon& pe, Pieza& p);  //borrar todas las comer, hay una funcion general en tablero
 	static void comer(Torre& t, Pieza& p);
 	static void comer(Alfil& a, Pieza& p);
 	static void comer(Caballo& c, Pieza& p);
