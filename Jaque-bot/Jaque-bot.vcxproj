@@ -156,7 +156,6 @@
     <ClCompile Include="Regla.cpp" />
     <ClCompile Include="Reina.cpp" />
     <ClCompile Include="Rey.cpp" />
-    <ClCompile Include="Tablero.cpp" />
     <ClCompile Include="Torre.cpp" />
     <ClCompile Include="V2D.cpp" />
   </ItemGroup>
