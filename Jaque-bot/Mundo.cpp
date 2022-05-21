@@ -2,6 +2,7 @@
 #include "freeglut.h"
 #include <math.h>
 
+//hola
 
 void Mundo::rotarOjo()
 {
