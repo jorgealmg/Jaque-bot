@@ -47,5 +47,4 @@ public:
 
 	void hacerMovimiento(Casilla* origen, Casilla* destino);
 
-
 };
