@@ -2,9 +2,7 @@
 #include "ETSIDI.h"
 #include "freeglut.h"
 #include "Casilla.h"
-//#include "V2D.h"
-
-#include "Pieza.h"
+//#include "Pieza.h"
 
 using ETSIDI::SpriteSequence;
 
@@ -27,6 +25,7 @@ public:
 
 
 	Casilla Tab[8][8];
+
 
 	Casilla* getCasilla(V2D pos);
 

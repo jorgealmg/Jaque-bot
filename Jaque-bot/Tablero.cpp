@@ -49,6 +49,47 @@ Tablero::Tablero() :tablero0("tablero0.png", 1, 1, 220)
 
 }
 
+
+void Tablero::inicializa(){
+
+	Tab[0][0].setPieza(Tab[0][0].p, T, B);
+	Tab[7][0].setPieza(Tab[7][0].p, T, B);
+	Tab[1][0].setPieza(Tab[1][0].p, C, B);
+	Tab[6][0].setPieza(Tab[6][0].p, C, B);
+	Tab[2][0].setPieza(Tab[2][0].p, A, B);
+	Tab[5][0].setPieza(Tab[5][0].p, A, B);
+	Tab[3][0].setPieza(Tab[3][0].p, K, B);
+	Tab[4][0].setPieza(Tab[4][0].p, Q, B);
+
+	
+	Tab[0][7].setPieza(Tab[0][7].p, T, N);
+	Tab[7][7].setPieza(Tab[7][7].p, T, N);
+	Tab[1][7].setPieza(Tab[1][7].p, C, N);
+	Tab[6][7].setPieza(Tab[6][7].p, C, N);
+	Tab[2][7].setPieza(Tab[2][7].p, A, N);
+	Tab[5][7].setPieza(Tab[5][7].p, A, N);
+	Tab[3][7].setPieza(Tab[3][7].p, K, N);
+	Tab[4][7].setPieza(Tab[4][7].p, Q, N);
+
+	for (int i = 1; i < 8; i++) {  //X
+		for (int j = 1; j < 8; j++) { //Y
+			
+			if (j == 1)
+				Tab[i][j].setPieza(Tab[i][j].p, P, B);
+			else if (j == 6)
+				Tab[i][j].setPieza(Tab[i][j].p, P, N);
+			else
+				Tab[i][j].setPiezaVacia(V);
+			
+
+		}
+	}
+	
+	
+
+
+}
+
 void Tablero::setLado(float l)
 {
 	lado = l;

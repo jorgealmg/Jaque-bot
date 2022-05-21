@@ -29,6 +29,7 @@ void Casilla::setPosicion(int l, int n)
 
 }
 
+
 void Casilla::setPieza(Pieza *pie,char tipo, char color)
 {
 	p = pie;
