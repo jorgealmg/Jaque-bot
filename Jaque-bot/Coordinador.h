@@ -11,8 +11,6 @@ protected:
 	Tablero tablero;
 	enum Estado { INICIO, JvJ, JvAI, CONF };
 	Estado estado;
-	V2D ratonPos;
-	int ratonEstado;
 
 public:
 	Coordinador();

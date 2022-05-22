@@ -84,6 +84,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnTimer(int value)
 {
 	//poner aqui el código de animacion
+	tablero.mueve();
 
 	//no borrar estas lineas
 	glutTimerFunc(25, OnTimer, 0);
@@ -105,7 +106,7 @@ void raton(int boton, int est, int x, int y)
 {
 	ratonPos.x = x;
 	ratonPos.y = y;
-	coordin.setRaton(ratonPos, est);
+	tablero.setRaton(ratonPos, est);
 
 	if (boton == GLUT_LEFT_BUTTON)
 	{

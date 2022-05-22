@@ -59,7 +59,7 @@ void Tablero::inicializa(){
 	Caballo C1B(B), C2B(B);
 	Torre T1B(B), T2B(B);
 	Peon P0B(B), P1B(B), P2B(B), P3B(B), P4B(B), P5B(B), P6B(B), P7B(B);
-
+	/*
 	cout << "Soy antes de set" << endl;
 	Tab[3][0].iniPieza(&KB);
 	cout << "Soy despues de set" << endl;
@@ -67,7 +67,7 @@ void Tablero::inicializa(){
 	cout << color << endl;
 	tipo tipo = KB.getTipo();
 	cout << tipo << endl;
-
+	*/
 	Tab[4][0].iniPieza(&QB);
 
 	Tab[2][0].iniPieza(&A1B);
@@ -157,7 +157,13 @@ void Tablero::setLado(float l)
 {
 	lado = l;
 }
-
+void Tablero::mueve() {
+	if (seleccionarCasilla() != NULL) cselect = seleccionarCasilla();	//std::cout << (seleccionarCasilla()->PosReal.x + 4.2)/1.2 << " " << (seleccionarCasilla()->PosReal.y-4.2)/1.2;
+	if (cselect != NULL) {
+		cselect1 = seleccionarCasilla();
+		if (cselect1 != NULL) Mueve(cselect, cselect1);
+	}
+}
 
 void Tablero::dibuja()
 {
@@ -185,11 +191,12 @@ void Tablero::dibuja()
 void Tablero::dibujaPiezas(int i, int j)
 {
 	if (Tab[i][j].p != NULL) {
+		/*
 		cout << "prueba" << endl;
 		color color = Tab[i][j].p->getColor();
 		cout << color << endl;
 		tipo tipo = Tab[i][j].p->getTipo();
-		cout << tipo << endl;
+		cout << tipo << endl;*/
 	}
 
 	/*if (color == B && tipo != V) {
@@ -381,7 +388,7 @@ void Tablero::dibujaPiezas(int i, int j)
 
 Casilla* Tablero::getCasilla(V2D pos) {
 
-	return &Tab[pos.x][pos.y];
+	return &Tab[(int) pos.x][(int) pos.y];
 }
 
 
@@ -634,4 +641,28 @@ void Tablero::hacerMovimiento(Casilla* origen, Casilla* destino) {
 	}
 	else
 		cout << "movimiento incorrecto" << endl;
+}
+
+Casilla* Tablero::seleccionarCasilla() {
+	if (ratonEstado == GLUT_DOWN) {
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (pulsaRect(270 + 34 * i, 170 + 34 * j, 300 + 34 * i, 200 + 34 * j)) {
+					if (Tab[i][j].p != NULL) return &Tab[i][j];
+				}
+			}
+		}
+		return NULL;
+	}
+	return NULL;
+}
+
+void Tablero::setRaton(V2D pos, int e) {
+	ratonPos = pos;
+	ratonEstado = e;
+}
+
+bool Tablero::pulsaRect(float x1, float y1, float x2, float y2) {
+	if (x1 < ratonPos.x && ratonPos.x < x2 && y1 < ratonPos.y && ratonPos.y < y2) return true;
+	else return false;
 }

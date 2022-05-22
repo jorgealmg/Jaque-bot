@@ -17,7 +17,6 @@ void Coordinador::tecla(unsigned char key)
 {
 	if (estado == INICIO) {
 		if (key == 'q') {
-			std::cout << pulsaRect(310, 260, 420, 300);
 			ETSIDI::play("sonidos/boton.wav");
 
 			tablero.inicializa();
@@ -75,14 +74,4 @@ void Coordinador::dibuja()
 		tablero.dibuja();
 	}
 	else if (estado == JvAI) {}
-}
-
-void Coordinador::setRaton(V2D pos, int e) {
-	ratonPos = pos;
-	ratonEstado = e;
-}
-
-bool Coordinador::pulsaRect(int x1, int y1, int x2, int y2) {
-	if (x1 < ratonPos.x && ratonPos.x < x2 && y1 < ratonPos.y && ratonPos.y < y2) return true;
-	else return false;
 }

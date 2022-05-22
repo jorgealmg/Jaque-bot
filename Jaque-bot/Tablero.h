@@ -22,6 +22,10 @@ private:
 	SpriteSequence tablero0;
 	float lado;
 	int movimiento; //para definir los turnos
+	V2D ratonPos;
+	int ratonEstado;
+	Casilla* cselect = NULL;
+	Casilla* cselect1 = NULL;
 
 
 public:
@@ -30,6 +34,8 @@ public:
 	//~Tablero();
 
 	void setLado(float a);
+
+	void mueve();
 
 	void dibuja();
 
@@ -53,5 +59,11 @@ public:
 	bool setTurno(int *movimiento, Casilla *origen);
 
 	void hacerMovimiento(Casilla* origen, Casilla* destino);
+
+	Casilla* seleccionarCasilla();
+
+	void setRaton(V2D pos, int e);
+
+	bool pulsaRect(float x1, float y1, float x2, float y2);
 
 };
