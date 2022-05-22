@@ -10,7 +10,7 @@ void Casilla::setColor(bool c)
 	color = c;
 }
 
-void Casilla::setPosReal(Vector2D p)
+void Casilla::setPosReal(V2D p)
 {
 	PosReal.x = p.x;
 	PosReal.y = p.y;
@@ -23,9 +23,6 @@ void Casilla::setPosicion(int l, int n)
 	numero = n;
 
 }
-
-<<<<<<< Updated upstream
-=======
 
 void Casilla::setPieza(Pieza* pie, char tipo, char color)
 {
@@ -52,8 +49,11 @@ Pieza* Casilla::getPieza() {
 
 
 bool Casilla::casillaVacia() {
+
 	return ocupacion;
 }
 
+}
 
->>>>>>> Stashed changes
+
+

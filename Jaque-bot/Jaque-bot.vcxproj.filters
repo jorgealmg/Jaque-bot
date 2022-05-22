@@ -21,9 +21,6 @@
     <ClCompile Include="Tablero.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Mundo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,15 +51,24 @@
     <ClCompile Include="Casilla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Mundo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Regla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mundo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tablero.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pieza.h">
@@ -90,6 +96,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Casilla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mundo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModoJuego.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Regla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

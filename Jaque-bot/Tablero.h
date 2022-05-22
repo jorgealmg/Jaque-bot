@@ -2,8 +2,6 @@
 #include "ETSIDI.h"
 #include "freeglut.h"
 #include "Casilla.h"
-<<<<<<< Updated upstream
-=======
 #include "Pieza.h"
 #include "Rey.h"
 #include "Reina.h"
@@ -11,8 +9,6 @@
 #include "Peon.h"
 #include "Torre.h"
 #include "Alfil.h"
-
->>>>>>> Stashed changes
 
 using ETSIDI::SpriteSequence;
 
@@ -22,9 +18,12 @@ private:
 
 	SpriteSequence tablero0;
 	float lado;
-
+	
 
 public:
+
+	
+
 	Tablero();
 
 	//~Tablero();
@@ -33,8 +32,19 @@ public:
 
 	void dibuja();
 
+	void dibujaPiezas(int, int);
+
 
 	Casilla Tab[8][8];
 
-};
+	Casilla* getCasilla(V2D pos);
 
+	void inicializa();
+	
+	bool obstaculo(V2D origen, V2D destino);
+
+	void comerPieza(Casilla *origen, Casilla * destino);
+
+	void Mueve(Casilla* origen, Casilla* destino);
+
+};

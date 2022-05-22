@@ -2,6 +2,8 @@
 #include "freeglut.h"
 #include <math.h>
 
+//hola
+
 void Mundo::rotarOjo()
 {
 	float dist = sqrt(x_ojo * x_ojo + z_ojo * z_ojo);
@@ -10,16 +12,21 @@ void Mundo::rotarOjo()
 	x_ojo = dist * cos(ang);
 	z_ojo = dist * sin(ang);
 }
-void Mundo::dibuja()
+
+void Mundo::inicializa()
 {
 
+}
 
+void Mundo::dibuja()
+{
+	gluLookAt(x_ojo, y_ojo, z_ojo,
+		0.0, 0, 0.0,
+		0.0, 10.0, 0.0);
+}
 
-	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
-		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
-		0.0, 10.0, 0.0);      // definimos hacia arriba (eje Y)    
-
-	tablero.dibuja();
+void Mundo::teclaEspecial(unsigned char key)
+{
 
 }
 
@@ -28,11 +35,11 @@ void Mundo::mueve()
 
 }
 
-void Mundo::inicializa()
+Mundo::Mundo()
 {
 	x_ojo = 0;
-	y_ojo = 10;
-	z_ojo = 20;
+	y_ojo = 0;
+	z_ojo = 15;
 }
 
 void Mundo::tecla(unsigned char key)

@@ -4,7 +4,8 @@ class Rey :
     public Pieza
 {
 public:
-    Rey(char c, char t) : Pieza(c, t) {};
+    Rey(enum color c) : Pieza(c, K) {};
     void mueve();
+    bool movimientoValido(V2D origen, V2D destino);
 };
 
