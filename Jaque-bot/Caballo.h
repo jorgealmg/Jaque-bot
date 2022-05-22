@@ -3,7 +3,9 @@
 class Caballo :
     public Pieza
 {
-    Caballo(char c, char t) : Pieza(c, t) {};
+public:
+    Caballo(enum color c) : Pieza(c, C) {};
     void mueve();
+    bool movimientoValido(V2D origen, V2D destino);
 };
 
