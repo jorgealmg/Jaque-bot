@@ -340,6 +340,7 @@ void Tablero::coronar(Casilla* c) {
 
 void Tablero::comerPieza(Casilla* origen, Casilla* destino)
 {
+	ETSIDI::play("sonidos/muerte.wav");
 	delete& destino->p;
 	destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 	origen->setPiezaVacia(V);
