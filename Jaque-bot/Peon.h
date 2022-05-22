@@ -4,8 +4,9 @@ class Peon :
     public Pieza
 {
 public:
-    Peon(enum color c) : Pieza(c, A) {};
+    Peon(char c) : Pieza(c, 'P') {};
     void mueve();
     bool movimientoValido(V2D origen, V2D destino);
+    bool comerPeon(V2D origen, V2D destino);
 };
 

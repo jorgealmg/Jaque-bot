@@ -22,7 +22,7 @@ private:
 	SpriteSequence tablero0;
 	float lado;
 	int movimiento; //para definir los turnos
-
+	friend class Caballo;
 
 public:
 	Tablero();

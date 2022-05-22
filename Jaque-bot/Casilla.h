@@ -11,8 +11,10 @@ public:
 	bool color; //0 negro, 1 blanco
 	bool ocupacion; //0 ocupada, 1 libre
 	Pieza *p;
+	char colorPieza;
+	char tipoPieza;
 
-public:
+
 	Casilla();
 	void setColor(bool color);
 	void setPosReal(V2D p);

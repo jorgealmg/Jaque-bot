@@ -89,7 +89,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-
       <AdditionalIncludeDirectories>lib src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -119,12 +118,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -176,6 +175,15 @@
     <ClInclude Include="Rey.h" />
     <ClInclude Include="Torre.h" />
     <ClInclude Include="V2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sonidos\boton.wav" />
+    <Media Include="sonidos\chess.wav" />
+    <Media Include="sonidos\inicio.mp3" />
+    <Media Include="sonidos\jaque.mp3" />
+    <Media Include="sonidos\jaquemate.wav" />
+    <Media Include="sonidos\juego.mp3" />
+    <Media Include="sonidos\muerte.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

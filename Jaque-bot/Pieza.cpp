@@ -1,19 +1,15 @@
 #include "Pieza.h"
  
-color Pieza::getColor() {
+char Pieza::getColor() {
+	cout << "color PIEZA" << endl;
 	cout << color << endl;
 	return color;
 }
 
-tipo Pieza::getTipo() {
+char Pieza::getTipo() {
+	cout << "tipo PIEZA" << endl;
 	cout << tipo << endl;
 	return tipo;
-}
-
-
-bool Pieza::movimientoValido(V2D origen, V2D destino)
-{
-	return false;
 }
 
 bool Pieza::comerPeon(V2D origen, V2D destino, Pieza *p) {
