@@ -119,12 +119,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,6 +153,7 @@
     <ClCompile Include="Mundo.cpp" />
     <ClCompile Include="Peon.cpp" />
     <ClCompile Include="Pieza.cpp" />
+    <ClCompile Include="PInicio.cpp" />
     <ClCompile Include="Regla.cpp" />
     <ClCompile Include="Reina.cpp" />
     <ClCompile Include="Rey.cpp" />
