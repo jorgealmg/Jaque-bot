@@ -5,6 +5,7 @@
 #include "Pieza.h"
 #include "Rey.h"
 
+
 using ETSIDI::SpriteSequence;
 
 class Tablero
