@@ -63,9 +63,9 @@ void Tablero::inicializa(){
 	cout << "Soy antes de set" << endl;
 	Tab[3][0].iniPieza(&KB);
 	cout << "Soy despues de set" << endl;
-	char color = KB.getColor();
+	color color = KB.getColor();
 	cout << color << endl;
-	char tipo = KB.getTipo();
+	tipo tipo = KB.getTipo();
 	cout << tipo << endl;
 
 	Tab[4][0].iniPieza(&QB);
@@ -186,9 +186,9 @@ void Tablero::dibujaPiezas(int i, int j)
 {
 	if (Tab[i][j].p != NULL) {
 		cout << "prueba" << endl;
-		char color = Tab[i][j].p->getColor();
+		color color = Tab[i][j].p->getColor();
 		cout << color << endl;
-		char tipo = Tab[i][j].p->getTipo();
+		tipo tipo = Tab[i][j].p->getTipo();
 		cout << tipo << endl;
 	}
 

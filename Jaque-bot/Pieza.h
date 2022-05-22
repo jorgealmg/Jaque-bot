@@ -22,8 +22,8 @@ public:
 
 	virtual bool movimientoValido(V2D origen, V2D destino);
 	bool comerPeon(V2D origen, V2D destino);
-	char getColor();
-	char getTipo();
+	color getColor();
+	tipo getTipo();
 	void dibuja(V2D pos, Pieza* p);
 
 	V2D pos;
