@@ -17,3 +17,8 @@ bool Rey::movimientoValido(V2D origen, V2D destino) {
 		return false;
 
 }
+
+bool Rey::comerPeon(V2D origen, V2D destino)
+{
+	return false;
+}

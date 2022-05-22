@@ -212,6 +212,8 @@ void Tablero::dibujaPiezas(int i, int j)
 				glDisable(GL_TEXTURE_2D);
 			}
 			else if (tipox == 'C') {
+				//CaballoNegro.setAltura();
+
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("caballoblanco.png").id);
 				glDisable(GL_LIGHTING);
@@ -557,48 +559,48 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 
 }
 
-void Tablero::Mueve(Casilla *origen,Casilla* destino) {
-<<<<<<< HEAD
+void Tablero::Mueve(Casilla* origen, Casilla* destino) {
+
 	if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
 		destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 		origen->setPiezaVacia('V');
-=======
 
-	if (origen->p->getTipo() != P) {
-		if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
-			if (destino->casillaVacia() == false)
-				comerPieza(origen, destino);
-			else {
-				destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
-				origen->setPiezaVacia(V);
-			}
-		}
-	}
 
-	else if (origen->p->getTipo() == P) {
-		if (origen->p->comerPeon(origen->PosReal, destino->PosReal) == true) {
-			if (destino->casillaVacia() == false) {
-				comerPieza(origen, destino);
-				if (origen->p->getColor() == B && destino->PosReal.y == 7)  //coronar
-					coronar(destino);
-				else if (origen->p->getColor() == N && destino->PosReal.y == 0)
-					coronar(destino);
+		if (origen->p->getTipo() != 'P') {
+			if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
+				if (destino->casillaVacia() == false)
+					comerPieza(origen, destino);
+				else {
+					destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+					origen->setPiezaVacia('V');
 				}
 			}
 		}
 
-		else if (origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true  && obstaculo(origen->p->pos, destino->p->pos) == false){
+		else if (origen->p->getTipo() == 'P') {
+			if (origen->p->comerPeon(origen->PosReal, destino->PosReal) == true) {
+				if (destino->casillaVacia() == false) {
+					comerPieza(origen, destino);
+					if (origen->p->getColor() == 'B' && destino->PosReal.y == 7)  //coronar
+						coronar(destino);
+					else if (origen->p->getColor() == 'N' && destino->PosReal.y == 0)
+						coronar(destino);
+				}
+			}
+		}
+
+		else if (origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true && obstaculo(origen->p->pos, destino->p->pos) == false) {
 			if (destino->casillaVacia() == true) {
 				destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
-				origen->setPiezaVacia(V);
-				if (origen->p->getColor() == B && destino->PosReal.y == 7)  //coronar
+				origen->setPiezaVacia('V');
+				if (origen->p->getColor() == 'B' && destino->PosReal.y == 7)  //coronar
 					coronar(destino);
-				else if (origen->p->getColor() == N && destino->PosReal.y == 0)
+				else if (origen->p->getColor() == 'N' && destino->PosReal.y == 0)
 					coronar(destino);
 			}
->>>>>>> 7deea661c839c7184b32834cd041f06e4837871b
-	}
+		}
 
+	}
 }
 
 void Tablero::coronar(Casilla* c) {
@@ -607,13 +609,13 @@ void Tablero::coronar(Casilla* c) {
 	cin >> letra;
 	switch (letra) {
 	case 'R':
-		c->setPieza(c->p, Q, c->p->color);
+		c->setPieza(c->p, 'Q', c->p->color);
 	case 'A':
-		c->setPieza(c->p, A, c->p->color);
+		c->setPieza(c->p, 'A', c->p->color);
 	case 'T':
-		c->setPieza(c->p, T, c->p->color);
+		c->setPieza(c->p, 'T', c->p->color);
 	case 'C':
-		c->setPieza(c->p, C, c->p->color);
+		c->setPieza(c->p, 'C', c->p->color);
 	}
 }
 
@@ -622,21 +624,18 @@ void Tablero::comerPieza(Casilla* origen, Casilla* destino)
 	ETSIDI::play("sonidos/muerte.wav");
 	delete& destino->p;
 	destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
-<<<<<<< HEAD
 	origen->setPiezaVacia('V');
-=======
-	origen->setPiezaVacia(V);
 }
 
 
 bool Tablero::setTurno(int *movimiento, Casilla * origen) {
 
-	if ((*movimiento % 2 == 0) && origen->p->getColor() == N)  //mueven negras
+	if ((*movimiento % 2 == 0) && origen->p->getColor() == 'N')  //mueven negras
 		return true;
-	else if ((*movimiento % 2 != 0) && origen->p->getColor() == B) //mueven blancas
+	else if ((*movimiento % 2 != 0) && origen->p->getColor() == 'B') //mueven blancas
 		return true;
 	else return false;
->>>>>>> 7deea661c839c7184b32834cd041f06e4837871b
+
 
 }
 
