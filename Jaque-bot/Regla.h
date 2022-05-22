@@ -11,7 +11,7 @@
 
 class Regla
 {
-	static void comer(Peon& pe, Pieza& p);
+	static void comer(Peon& pe, Pieza& p);  //borrar todas las comer, hay una funcion general en tablero
 	static void comer(Torre& t, Pieza& p);
 	static void comer(Alfil& a, Pieza& p);
 	static void comer(Caballo& c, Pieza& p);
@@ -20,5 +20,8 @@ class Regla
 	//static bool casillaocupada(int x, int y, Tablero& tab);
 	static void borrarpieza(Pieza& p);
 
-	static void jaque(Peon& pe, Rey& ry); //jaque
+	static bool jaque(Rey& ry, Pieza& p); //jaque
+	static bool jaqueReal(Rey& ry, Pieza& p);
+	static bool enroqueCorto(Rey& ry, Torre& t);
+	static bool enroqueLargo(Rey& ry, Torre& t);
 };

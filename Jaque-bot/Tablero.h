@@ -25,4 +25,6 @@ public:
 
 	Casilla Tab[8][8];
 
+	bool obstaculo(V2D origen, V2D destino);
+
 };
