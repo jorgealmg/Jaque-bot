@@ -1,11 +1,13 @@
 #include "Pieza.h"
  
 char Pieza::getColor() {
-	return color;
+	cout << this->color << endl;
+	return this->color;
 }
 
 char Pieza::getTipo() {
-	return tipo;
+	cout << this->tipo << endl;
+	return this->tipo;
 }
 
 

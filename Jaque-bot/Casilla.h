@@ -17,6 +17,7 @@ public:
 	void setColor(bool color);
 	void setPosReal(V2D p);
 	void setPieza(Pieza *pie, char tipo, char color);
+	void iniPieza(Pieza *p);
 	void setPiezaVacia(char tipo);
 
 	Pieza * getPieza();

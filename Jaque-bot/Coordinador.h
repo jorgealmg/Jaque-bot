@@ -14,11 +14,10 @@ public:
 	void tecla(unsigned char key);
 	void mueve();
 	void dibuja();
-
+	
 protected:
 	Mundo mundo;
 	Tablero tablero;
-
 	enum Estado { INICIO, JvJ, JvAI, CONF };
 	Estado estado;
 };

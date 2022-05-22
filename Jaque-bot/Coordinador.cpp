@@ -3,6 +3,7 @@
 Coordinador::Coordinador()
 {
 	estado = INICIO;
+	ETSIDI::playMusica("sonidos/inicio.mp3");
 }
 
 /*void Coordinador::teclaEspecial(unsigned char key)
@@ -14,7 +15,11 @@ void Coordinador::tecla(unsigned char key)
 {
 	if (estado == INICIO) {
 		if (key == 'q') {
+			ETSIDI::play("sonidos/boton.wav");
+
+			tablero.inicializa();
 			mundo.inicializa();
+			ETSIDI::playMusica("sonidos/juego.mp3");
 			estado = JvJ;
 		}
 		else if (key == 'w') {
@@ -52,44 +57,24 @@ void Coordinador::dibuja()
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 0); glVertex3f(-5, -5, 0);
-		glTexCoord2d(1, 0); glVertex3f(-5, 5, 0);
-		glTexCoord2d(1, 1); glVertex3f(5, 5, 0);
-		glTexCoord2d(0, 1); glVertex3f(5, -5, 0);
+		glTexCoord2d(0, 0); glVertex3f(-5, 5, 0);
+		glTexCoord2d(1, 0); glVertex3f(5, 5, 0);
+		glTexCoord2d(1, 1); glVertex3f(5, -5, 0);
+		glTexCoord2d(0, 1); glVertex3f(-5, -5, 0);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 
-		glEnable(GL_TEXTURE_2D);
-
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("peonblanco.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 0); glVertex3f(-5, -4.2, 0);
-		glTexCoord2d(1, 0); glVertex3f(-5, -3, 0);
-		glTexCoord2d(1, 1); glVertex3f(-4.2, -3, 0);
-		glTexCoord2d(0, 1); glVertex3f(-4.2, -4.2, 0);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
 	}
 	else if (estado == JvJ) {
-		mundo.dibuja();
-		//tablero.dibuja();
-		glEnable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("tablero0.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 0); glVertex3f(-5, -5, 0);
-		glTexCoord2d(1, 0); glVertex3f(-5, 5, 0);
-		glTexCoord2d(1, 1); glVertex3f(5, 5, 0);
-		glTexCoord2d(0, 1); glVertex3f(5, -5, 0);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
+		mundo.dibuja();
+		tablero.dibuja();
+	}
+	else if (estado == JvAI)
+	{
+	
 	}
 
+	}
 }
