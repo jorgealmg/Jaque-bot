@@ -340,6 +340,7 @@ void Tablero::coronar(Casilla* c) {
 
 void Tablero::comerPieza(Casilla* origen, Casilla* destino)
 {
+	ETSIDI::play("sonidos/muerte.wav");
 	delete& destino->p;
 	destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 	origen->setPiezaVacia(V);
@@ -359,11 +360,9 @@ bool Tablero::setTurno(int *movimiento, Casilla * origen) {
 void Tablero::hacerMovimiento(Casilla* origen, Casilla* destino) {
 	if (setTurno(&movimiento, origen)) {
 		Mueve(origen, destino);
-
 		ETSIDI::play("sonidos/chess.wav");
 		movimiento++;
 	}
 	else
 		cout << "movimiento incorrecto" << endl;
 }
-

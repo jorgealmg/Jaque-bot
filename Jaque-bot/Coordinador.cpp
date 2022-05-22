@@ -3,6 +3,7 @@
 Coordinador::Coordinador()
 {
 	estado = INICIO;
+	ETSIDI::playMusica("sonidos/inicio.mp3");
 }
 
 /*void Coordinador::teclaEspecial(unsigned char key)
@@ -14,7 +15,9 @@ void Coordinador::tecla(unsigned char key)
 {
 	if (estado == INICIO) {
 		if (key == 'q') {
+			ETSIDI::play("sonidos/boton.wav");
 			mundo.inicializa();
+			ETSIDI::playMusica("sonidos/juego.mp3");
 			estado = JvJ;
 		}
 		else if (key == 'w') {
@@ -75,6 +78,7 @@ void Coordinador::dibuja()
 		glDisable(GL_TEXTURE_2D);
 	}
 	else if (estado == JvJ) {
+
 		mundo.dibuja();
 		//tablero.dibuja();
 		glEnable(GL_TEXTURE_2D);

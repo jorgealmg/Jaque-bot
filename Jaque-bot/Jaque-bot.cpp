@@ -15,11 +15,15 @@ using namespace ETSIDI;
 
 Coordinador coordin;
 Tablero tablero;
+V2D ratonPos, u(235, 235), v(565, 465);
+bool ratonIzq;
 void OnKeyboardDown(unsigned char key, int x, int y);
 void onSpecialKeyboardDown(int key, int x, int y);
 void OnDraw(void);
 void OnTimer(int value);
 void inicio();
+void raton(int boton, int est, int x, int y);
+bool pulsaRect(V2D u, V2D v);
 
 int main(int argc, char* argv[])
 {
@@ -33,6 +37,7 @@ int main(int argc, char* argv[])
 	glEnable(GL_COLOR_MATERIAL);
 	glMatrixMode(GL_PROJECTION);
 	gluPerspective(40.0, 800 / 600.0f, 0.1, 150);
+	glutMouseFunc(raton);
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
 	glutKeyboardFunc(OnKeyboardDown);
@@ -93,4 +98,38 @@ void onSpecialKeyboardDown(int key, int x, int y)
 {
 	//mundo.teclaEspecial(key);
 	//glutPostRedisplay();
+}
+
+
+void raton(int boton, int est, int x, int y)
+{
+	ratonPos.x = x;
+	ratonPos.y = y;
+
+	if (boton == GLUT_LEFT_BUTTON)
+	{
+		if (est == GLUT_DOWN)
+		{
+			ratonIzq = true; //235, 135, 565, 465
+			if (pulsaRect(u , v)) { std::cout << "hit"; }
+			std::cout << std::endl << "x: " << ratonPos.x << std::endl << "y: " << ratonPos.y << std::endl;
+		}
+		else if (est == GLUT_UP)
+		{
+			ratonIzq = false;
+		}
+	}
+	/*
+		else if (boton == GLUT_RIGHT_BUTTON)
+		{
+			if (estado == GLUT_DOWN)
+				ratonDer == true;
+			else if (estado == GLUT_UP)
+				ratonDer = false;
+		}*/
+}
+
+bool pulsaRect(V2D u, V2D v) {
+	if (u.x < ratonPos.x && ratonPos.x < v.x && u.y < ratonPos.y && ratonPos.y < v.y) return true;
+	else return false;
 }
