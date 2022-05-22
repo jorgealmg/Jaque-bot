@@ -89,12 +89,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-
-      <AdditionalIncludeDirectories>lib src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h;lib src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,12 +105,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -119,12 +121,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h;C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\h</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\jorge\source\repos\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\alber\AppData\Roaming\SPB_Data\github\Jaque-bot\Jaque-bot\lib;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,12 +137,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\h;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>;C:\Users\Marina\source\repos\jorgealmg\Jaque-bot\Jaque-bot\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -176,6 +180,15 @@
     <ClInclude Include="Rey.h" />
     <ClInclude Include="Torre.h" />
     <ClInclude Include="V2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sonidos\boton.wav" />
+    <Media Include="sonidos\chess.wav" />
+    <Media Include="sonidos\inicio.mp3" />
+    <Media Include="sonidos\jaque.mp3" />
+    <Media Include="sonidos\jaquemate.wav" />
+    <Media Include="sonidos\juego.mp3" />
+    <Media Include="sonidos\muerte.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

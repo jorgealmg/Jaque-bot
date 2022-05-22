@@ -59,16 +59,12 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	gluLookAt(0, 0, 15,  // posicion del ojo
+	gluLookAt(0, 0, 10,  // posicion del ojo
 		0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
 		0.0, 10.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	coordin.dibuja();
 
-	glTranslatef(-4.2, 3, 0);
-	glColor3ub(255, 255, 0);
-	glutSolidCube(1.1);
-	glTranslatef(4.2, -3, 0);
 	glutPostRedisplay();
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();

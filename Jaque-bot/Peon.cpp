@@ -6,7 +6,7 @@ bool Peon::movimientoValido(V2D origen, V2D destino) {
 	char color = getColor();
 
 	V2D res = destino-origen;
-	if (color == B) { //piezas blancas
+	if (color == 'B') { //piezas blancas
 		if (origen.x == 1) //posicion de salida de los peones
 		{
 			if ((res.y == 2 && res.x == 0) || (res.y == 1 && res.x == 0))
@@ -39,4 +39,7 @@ bool Peon::movimientoValido(V2D origen, V2D destino) {
 		}
 	}
 }
+
+
+
 

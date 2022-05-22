@@ -27,6 +27,7 @@ private:
 	Casilla* cselect = NULL;
 	Casilla* cselect1 = NULL;
 
+	friend class Caballo;
 
 public:
 	Tablero();
