@@ -13,7 +13,7 @@ public:
 	virtual void mueve() = 0;
 
 	virtual bool movimientoValido(V2D origen, V2D destino);
-	virtual bool comerPeon(V2D origen, V2D destino) = 0;
+	bool comerPeon(V2D origen, V2D destino);
 	char getColor();
 	char getTipo();
 
