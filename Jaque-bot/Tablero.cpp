@@ -60,24 +60,15 @@ void Tablero::inicializa(){
 	Torre T1B('B'), T2B('B');
 	Peon P0B('B'), P1B('B'), P2B('B'), P3B('B'), P4B('B'), P5B('B'), P6B('B'), P7B('B');
 
-	cout << KB.getColor() << " " << KB.getTipo() << endl;
-	cout << QB.getColor() << " " << QB.getTipo() << endl;
 
-	cout << "INIPIEZAS ANTES" << endl;
 	Tab[4][0].iniPieza(&KB);
-	cout << "INIPIEZAS DESPUES" << endl;
-
 	Tab[3][0].iniPieza(&QB);
-
-	Tab[2][0].iniPieza(&A1B);
+  Tab[2][0].iniPieza(&A1B);
 	Tab[5][0].iniPieza(&A2B);
-
 	Tab[1][0].iniPieza(&C1B);
 	Tab[6][0].iniPieza(&C2B);
-
 	Tab[0][0].iniPieza(&T1B);
 	Tab[7][0].iniPieza(&T2B);
-
 	Tab[0][1].iniPieza(&P0B);
 	Tab[1][1].iniPieza(&P1B);
 	Tab[2][1].iniPieza(&P2B);
@@ -126,7 +117,7 @@ void Tablero::inicializa(){
 	Tab[3][0].setPieza(Tab[3][0].p, K, B);
 	Tab[4][0].setPieza(Tab[4][0].p, Q, B);
 
-	
+
 	Tab[0][7].setPieza(Tab[0][7].p, T, N);
 	Tab[7][7].setPieza(Tab[7][7].p, T, N);
 	Tab[1][7].setPieza(Tab[1][7].p, C, N);
@@ -135,18 +126,18 @@ void Tablero::inicializa(){
 	Tab[5][7].setPieza(Tab[5][7].p, A, N);
 	Tab[3][7].setPieza(Tab[3][7].p, K, N);
 	Tab[4][7].setPieza(Tab[4][7].p, Q, N);
-	
+
 
 	for (int i = 1; i < 8; i++) {  //X
 		for (int j = 1; j < 8; j++) { //Y
-			
+
 			if (j == 1)
 				Tab[i][j].setPieza(Tab[i][j].p, P, B);
 			else if (j == 6)
 				Tab[i][j].setPieza(Tab[i][j].p, P, N);
 			else
 				Tab[i][j].setPiezaVacia(V);
-			
+
 		}
 	}*/
 
@@ -163,11 +154,7 @@ void Tablero::dibuja()
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++) {
-			cout << Tab[i][j].colorPieza << endl; //IMPRIME VACIO
-			cout << Tab[i][j].tipoPieza << endl;  //IMPRIME VACIO
-			cout << "EMPIEZA DIBUJAPIEZAS" << endl;
 			dibujaPiezas(i, j);
-			cout << i << " " << j << endl;
 		}
 	}
 	glEnable(GL_TEXTURE_2D);
@@ -187,17 +174,12 @@ void Tablero::dibuja()
 void Tablero::dibujaPiezas(int i, int j)
 {
 	if (Tab[i][j].ocupacion == true) {
-		cout << "prueba tablero dibuja piezas" << endl;
 		char colorx = Tab[i][j].colorPieza;
-		cout << colorx << endl;
 		char tipox = Tab[i][j].tipoPieza;
-		cout << tipox << endl;
 
 		if (colorx == 'B') {
-			cout << "SOY UNA PIEZA BLANCAAAA SOY UNA PIEZA BLANCAAA DE PRUEBAAAAA" << endl;
-			if (tipox == 'T') {
-				cout << "SOY UNA TORRE SOY UNA TORRE DE PRUEBAAAAA" << endl;
-
+			switch (tipox){
+			case 'T':
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("torreblanca.png").id);
 				glDisable(GL_LIGHTING);
@@ -210,10 +192,9 @@ void Tablero::dibujaPiezas(int i, int j)
 				glEnd();
 				glEnable(GL_LIGHTING);
 				glDisable(GL_TEXTURE_2D);
-			}
-			else if (tipox == 'C') {
-				//CaballoNegro.setAltura();
+				break;
 
+			case 'C':
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("caballoblanco.png").id);
 				glDisable(GL_LIGHTING);
@@ -226,8 +207,9 @@ void Tablero::dibujaPiezas(int i, int j)
 				glEnd();
 				glEnable(GL_LIGHTING);
 				glDisable(GL_TEXTURE_2D);
-			}
-			else if (tipox == 'A') {
+				break;
+
+			case 'A':
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("alfilblanco.png").id);
 				glDisable(GL_LIGHTING);
@@ -240,9 +222,9 @@ void Tablero::dibujaPiezas(int i, int j)
 				glEnd();
 				glEnable(GL_LIGHTING);
 				glDisable(GL_TEXTURE_2D);
-			}
-			else if (tipox == 'Q') {
-				cout << "REINA REINA REINA REINA REINA" << endl;
+				break;
+
+			case 'Q':
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("reinablanca.png").id);
 				glDisable(GL_LIGHTING);
@@ -255,8 +237,9 @@ void Tablero::dibujaPiezas(int i, int j)
 				glEnd();
 				glEnable(GL_LIGHTING);
 				glDisable(GL_TEXTURE_2D);
-			}
-			else if (tipox == 'K') {
+				break;
+
+			case 'K':
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("reyblanco.png").id);
 				glDisable(GL_LIGHTING);
@@ -269,8 +252,9 @@ void Tablero::dibujaPiezas(int i, int j)
 				glEnd();
 				glEnable(GL_LIGHTING);
 				glDisable(GL_TEXTURE_2D);
-			}
-			else if (tipox == 'P') {
+				break;
+
+			case'P':
 				glEnable(GL_TEXTURE_2D);
 				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("peonblanco.png").id);
 				glDisable(GL_LIGHTING);
@@ -283,10 +267,10 @@ void Tablero::dibujaPiezas(int i, int j)
 				glEnd();
 				glEnable(GL_LIGHTING);
 				glDisable(GL_TEXTURE_2D);
+				break;
 			}
 		}
 		else if (colorx == 'N') {
-			cout << "SOY UNA PIEZA NEGRAAAAAAA SOY UNA PIEZA NEGRAAAAAA" << endl;
 			switch (tipox) {
 			case 'T':
 				glEnable(GL_TEXTURE_2D);
@@ -387,7 +371,7 @@ void Tablero::dibujaPiezas(int i, int j)
 Casilla* Tablero::getCasilla(V2D pos) {
 	return &Tab[0][0];
 	//return &Tab[pos.x][pos.y];
-	
+
 }
 
 
@@ -476,7 +460,7 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 			return false;
 	}
 	else if ((origen.x == destino.x) && (origen.y < destino.y)) {
-		
+
 		for (int j = origen.y; j < destino.y; j++) {
 			V2D v;
 			v.x = origen.x;
@@ -487,7 +471,7 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 			if (c->casillaVacia() == false)
 				ocupacion++;
 		}
-		
+
 		if (ocupacion >= 1)
 			return true;
 		else
@@ -515,7 +499,7 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 
 	else if ((origen.x < destino.x) && (origen.y == destino.y)) {
 		for (int i = origen.x; i < destino.x; i++) {
-			
+
 			V2D v;
 			v.x = i;
 			v.y = origen.y;
@@ -524,7 +508,7 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 			c = getCasilla(v);
 			if (c->casillaVacia() == false)
 				ocupacion++;
-			
+
 		}
 
 		if (ocupacion >= 1)

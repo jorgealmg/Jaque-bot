@@ -23,7 +23,18 @@ void Coordinador::tecla(unsigned char key)
 			estado = JvJ;
 		}
 		else if (key == '2') {
-
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("jvsia.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(-5, -5, 0);
+			glTexCoord2d(1, 0); glVertex3f(-5, 5, 0);
+			glTexCoord2d(1, 1); glVertex3f(5, 5, 0);
+			glTexCoord2d(0, 1); glVertex3f(5, -5, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
 		}
 		else if (key == 's' || key == 'S') {
 			exit(0);
@@ -57,6 +68,7 @@ void Coordinador::dibuja()
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
+
 		glTexCoord2d(0, 0); glVertex3f(-5, 5, 0);
 		glTexCoord2d(1, 0); glVertex3f(5, 5, 0);
 		glTexCoord2d(1, 1); glVertex3f(5, -5, 0);
@@ -64,6 +76,7 @@ void Coordinador::dibuja()
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
+
 
 	}
 	else if (estado == JvJ) {
@@ -73,8 +86,19 @@ void Coordinador::dibuja()
 	}
 	else if (estado == JvAI)
 	{
-	
+		glEnable(GL_TEXTURE_2D);
+
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("jvsai.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 0); glVertex3f(-5, 5, 0);
+		glTexCoord2d(1, 0); glVertex3f(5, 5, 0);
+		glTexCoord2d(1, 1); glVertex3f(5, -5, 0);
+		glTexCoord2d(0, 1); glVertex3f(-5, -5, 0);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 	}
 
 }
-

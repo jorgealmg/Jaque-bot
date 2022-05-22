@@ -38,7 +38,6 @@ void Casilla::iniPieza(Pieza *p)
 	this->ocupacion = true;
 	this->colorPieza = p->color;
 	this->tipoPieza = p->tipo;
-	cout << this->p->getColor() << endl;
 }
 
 void Casilla::setPiezaVacia(char tipo)
@@ -55,8 +54,3 @@ bool Casilla::casillaVacia() {
 
 	return ocupacion;
 }
-
-
-
-
-
