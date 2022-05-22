@@ -21,7 +21,7 @@ public:
 	virtual void mueve() = 0;
 
 	virtual bool movimientoValido(V2D origen, V2D destino);
-	bool comerPeon(V2D origen, V2D destino);
+	bool comerPeon(V2D origen, V2D destino, Pieza *p);
 	color getColor();
 	tipo getTipo();
 	void dibuja(V2D pos, Pieza* p);
