@@ -11,6 +11,8 @@ Coordinador::Coordinador()
 
 }*/
 
+//void Coordinador::setEstado(Estado est) { estado = est; }
+
 void Coordinador::tecla(unsigned char key)
 {
 	if (estado == INICIO) {

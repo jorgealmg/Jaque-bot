@@ -156,7 +156,13 @@ void Tablero::setLado(float l)
 {
 	lado = l;
 }
-
+void Tablero::mueve() {
+	if (seleccionarCasilla() != NULL) cselect = seleccionarCasilla();	//std::cout << (seleccionarCasilla()->PosReal.x + 4.2)/1.2 << " " << (seleccionarCasilla()->PosReal.y-4.2)/1.2;
+	if (cselect != NULL) {
+		cselect1 = seleccionarCasilla();
+		if (cselect1 != NULL) Mueve(cselect, cselect1);
+	}
+}
 
 void Tablero::dibuja()
 {
@@ -385,9 +391,8 @@ void Tablero::dibujaPiezas(int i, int j)
 
 
 Casilla* Tablero::getCasilla(V2D pos) {
-	return &Tab[0][0];
-	//return &Tab[pos.x][pos.y];
-	
+
+	return &Tab[(int) pos.x][(int) pos.y];
 }
 
 
@@ -647,4 +652,28 @@ void Tablero::hacerMovimiento(Casilla* origen, Casilla* destino) {
 	}
 	else
 		cout << "movimiento incorrecto" << endl;
+}
+
+Casilla* Tablero::seleccionarCasilla() {
+	if (ratonEstado == GLUT_DOWN) {
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (pulsaRect(270 + 34 * i, 170 + 34 * j, 300 + 34 * i, 200 + 34 * j)) {
+					if (Tab[i][j].p != NULL) return &Tab[i][j];
+				}
+			}
+		}
+		return NULL;
+	}
+	return NULL;
+}
+
+void Tablero::setRaton(V2D pos, int e) {
+	ratonPos = pos;
+	ratonEstado = e;
+}
+
+bool Tablero::pulsaRect(float x1, float y1, float x2, float y2) {
+	if (x1 < ratonPos.x && ratonPos.x < x2 && y1 < ratonPos.y && ratonPos.y < y2) return true;
+	else return false;
 }

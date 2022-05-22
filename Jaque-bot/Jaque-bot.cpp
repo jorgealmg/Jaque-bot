@@ -15,7 +15,7 @@ using namespace ETSIDI;
 
 Coordinador coordin;
 Tablero tablero;
-V2D ratonPos, u(235, 235), v(565, 465);
+V2D ratonPos, u(310, 260), v(420, 300);
 bool ratonIzq;
 void OnKeyboardDown(unsigned char key, int x, int y);
 void onSpecialKeyboardDown(int key, int x, int y);
@@ -80,6 +80,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnTimer(int value)
 {
 	//poner aqui el código de animacion
+	tablero.mueve();
 
 	//no borrar estas lineas
 	glutTimerFunc(25, OnTimer, 0);
@@ -101,13 +102,13 @@ void raton(int boton, int est, int x, int y)
 {
 	ratonPos.x = x;
 	ratonPos.y = y;
+	tablero.setRaton(ratonPos, est);
 
 	if (boton == GLUT_LEFT_BUTTON)
 	{
 		if (est == GLUT_DOWN)
 		{
-			ratonIzq = true; //235, 135, 565, 465
-			if (pulsaRect(u , v)) { std::cout << "hit"; }
+			ratonIzq = true;
 			std::cout << std::endl << "x: " << ratonPos.x << std::endl << "y: " << ratonPos.y << std::endl;
 		}
 		else if (est == GLUT_UP)
@@ -123,9 +124,4 @@ void raton(int boton, int est, int x, int y)
 			else if (estado == GLUT_UP)
 				ratonDer = false;
 		}*/
-}
-
-bool pulsaRect(V2D u, V2D v) {
-	if (u.x < ratonPos.x && ratonPos.x < v.x && u.y < ratonPos.y && ratonPos.y < v.y) return true;
-	else return false;
 }
