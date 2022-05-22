@@ -114,4 +114,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="sonidos\boton.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sonidos\chess.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sonidos\inicio.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sonidos\jaque.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sonidos\jaquemate.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sonidos\juego.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="sonidos\muerte.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
 </Project>
