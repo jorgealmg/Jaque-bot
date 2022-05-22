@@ -23,9 +23,7 @@ public:
 	void tecla(unsigned char key);
 	void mueve();
 	void dibuja();
-
 	void setRaton(V2D pos, int e);
-
 	bool pulsaRect(int x1, int y1, int x2, int y2);
 
 };

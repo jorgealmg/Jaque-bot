@@ -105,13 +105,13 @@ void raton(int boton, int est, int x, int y)
 {
 	ratonPos.x = x;
 	ratonPos.y = y;
+	coordin.setRaton(ratonPos, est);
 
 	if (boton == GLUT_LEFT_BUTTON)
 	{
 		if (est == GLUT_DOWN)
 		{
-			ratonIzq = true; //235, 135, 565, 465
-			coordin.setRaton(ratonPos, est);
+			ratonIzq = true;
 			std::cout << std::endl << "x: " << ratonPos.x << std::endl << "y: " << ratonPos.y << std::endl;
 		}
 		else if (est == GLUT_UP)
