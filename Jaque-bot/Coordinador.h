@@ -6,18 +6,26 @@
 
 class Coordinador
 {
-public:
-	Coordinador();
-	//virtual ~Coordinador();
-
-	void teclaEspecial(unsigned char key);
-	void tecla(unsigned char key);
-	void mueve();
-	void dibuja();
-	
 protected:
 	Mundo mundo;
 	Tablero tablero;
 	enum Estado { INICIO, JvJ, JvAI, CONF };
 	Estado estado;
+	V2D ratonPos;
+	int ratonEstado;
+
+public:
+	Coordinador();
+	//virtual ~Coordinador();
+
+	void teclaEspecial(unsigned char key);
+	void setEstado(Estado est);
+	void tecla(unsigned char key);
+	void mueve();
+	void dibuja();
+
+	void setRaton(V2D pos, int e);
+
+	bool pulsaRect(int x1, int y1, int x2, int y2);
+
 };
