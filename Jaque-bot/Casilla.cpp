@@ -2,17 +2,12 @@
 
 Casilla::Casilla()
 {
-
-
+	ocupacion = false;
 }
 
 void Casilla::setColor(bool c)
 {
-
 	color = c;
-
-
-
 }
 
 void Casilla::setPosReal(V2D p)
@@ -29,13 +24,18 @@ void Casilla::setPosicion(int l, int n)
 
 }
 
-
-void Casilla::setPieza(Pieza *pie,char tipo, char color)
+void Casilla::setPieza(Pieza* pie, char tipo, char color)
 {
 	p = pie;
 	tipo = p->tipo;
 	color = p->color;
 
+}
+
+void Casilla::iniPieza(Pieza *p)
+{
+	this->p = p;
+	this->ocupacion = true;
 }
 
 void Casilla::setPiezaVacia(char tipo)
@@ -50,12 +50,10 @@ Pieza* Casilla::getPieza() {
 
 bool Casilla::casillaVacia() {
 
-	Pieza *pieza = getPieza();
-
-	if (pieza->tipo == V)
-		return true;
-	else
-		return false;
+	return ocupacion;
 }
+
+}
+
 
 

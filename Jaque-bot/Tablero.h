@@ -4,7 +4,13 @@
 #include "ETSIDI.h"
 #include "freeglut.h"
 #include "Casilla.h"
-//#include "Pieza.h"
+#include "Pieza.h"
+#include "Rey.h"
+#include "Reina.h"
+#include "Caballo.h"
+#include "Peon.h"
+#include "Torre.h"
+#include "Alfil.h"
 
 using ETSIDI::SpriteSequence;
 using namespace std;
@@ -27,9 +33,10 @@ public:
 
 	void dibuja();
 
+	void dibujaPiezas(int, int);
+
 
 	Casilla Tab[8][8];
-
 
 	Casilla* getCasilla(V2D pos);
 
