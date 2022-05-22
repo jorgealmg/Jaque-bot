@@ -14,13 +14,13 @@ char Pieza::getTipo() {
 
 bool Pieza::comerPeon(V2D origen, V2D destino, Pieza *p) {
 	V2D res = destino - origen;
-	if (p->getColor() == B) {
+	if (p->getColor() == 'B') {
 		if (res.y == 1 && abs(res.x) == 1)
 			return true;
 		else
 			return false;
 	}
-	if (p->getColor() == N) {
+	if (p->getColor() == 'N') {
 		if (res.y == -1 && abs(res.x) == 1)
 			return true;
 		else
