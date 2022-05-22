@@ -40,12 +40,3 @@ bool Peon::movimientoValido(V2D origen, V2D destino) {
 	}
 }
 
-
-bool Peon::comerPeon(V2D origen, V2D destino) {
-	V2D res = destino - origen;
-
-	if (res.y == 1 && abs(res.x) == 1)
-		return true;
-	else 
-		return false;
-}
