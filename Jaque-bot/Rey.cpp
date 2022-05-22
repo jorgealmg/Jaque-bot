@@ -1,5 +1,6 @@
 #include "Rey.h"
 
+
 void Rey::mueve() {}
 
 bool Rey::movimientoValido(V2D origen, V2D destino) {

@@ -4,7 +4,7 @@ class Reina :
     public Pieza
 {
 public:
-    Reina(char c, char t) : Pieza(c, t) {};
+    Reina(enum color c) : Pieza(c, Q) {};
     void mueve();
     bool movimientoValido(V2D origen, V2D destino);
 };

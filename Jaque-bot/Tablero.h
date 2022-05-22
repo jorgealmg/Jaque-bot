@@ -2,7 +2,8 @@
 #include "ETSIDI.h"
 #include "freeglut.h"
 #include "Casilla.h"
-//#include "Pieza.h"
+#include "Pieza.h"
+#include "Rey.h"
 
 using ETSIDI::SpriteSequence;
 
@@ -12,9 +13,12 @@ private:
 
 	SpriteSequence tablero0;
 	float lado;
-
+	
 
 public:
+
+	
+
 	Tablero();
 
 	//~Tablero();
@@ -23,9 +27,10 @@ public:
 
 	void dibuja();
 
+	void dibujaPiezas(int, int);
+
 
 	Casilla Tab[8][8];
-
 
 	Casilla* getCasilla(V2D pos);
 

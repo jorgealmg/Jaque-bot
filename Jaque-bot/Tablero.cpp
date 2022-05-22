@@ -52,8 +52,17 @@ Tablero::Tablero() :tablero0("tablero0.png", 1, 1, 220)
 
 void Tablero::inicializa(){
 
-	Tab[0][0].setPieza(Tab[0][0].p, T, B);
-	Tab[7][0].setPieza(Tab[7][0].p, T, B);
+	Rey R1(B);
+
+	cout << "Soy antes de set" << endl;
+	Tab[0][0].iniPieza(&R1);
+	cout << "Soy despues de set" << endl;
+	char color = R1.getColor();
+	cout << color << endl;
+	char tipo = R1.getTipo();
+	cout << tipo << endl;
+
+	/*Tab[7][0].setPieza(Tab[7][0].p, T, B);
 	Tab[1][0].setPieza(Tab[1][0].p, C, B);
 	Tab[6][0].setPieza(Tab[6][0].p, C, B);
 	Tab[2][0].setPieza(Tab[2][0].p, A, B);
@@ -70,6 +79,7 @@ void Tablero::inicializa(){
 	Tab[5][7].setPieza(Tab[5][7].p, A, N);
 	Tab[3][7].setPieza(Tab[3][7].p, K, N);
 	Tab[4][7].setPieza(Tab[4][7].p, Q, N);
+	
 
 	for (int i = 1; i < 8; i++) {  //X
 		for (int j = 1; j < 8; j++) { //Y
@@ -81,13 +91,8 @@ void Tablero::inicializa(){
 			else
 				Tab[i][j].setPiezaVacia(V);
 			
-
 		}
-	}
-	
-	
-
-
+	}*/
 }
 
 void Tablero::setLado(float l)
@@ -95,22 +100,223 @@ void Tablero::setLado(float l)
 	lado = l;
 }
 
+
 void Tablero::dibuja()
 {
-	glPushMatrix();
-	glTranslatef(-5.0f, -5.0f, 0);
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+			dibujaPiezas(i, j);
+			//cout << "hola" << endl;
+	}
+	glEnable(GL_TEXTURE_2D);
 
-
-	tablero0.flip(false, false);
-
-	tablero0.draw();
-
-	glTranslatef(5.0f, 5.0f, 0);
-	glPopMatrix();
-
-
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("tablero0.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 0); glVertex3f(-5, -5, 0);
+	glTexCoord2d(1, 0); glVertex3f(-5, 5, 0);
+	glTexCoord2d(1, 1); glVertex3f(5, 5, 0);
+	glTexCoord2d(0, 1); glVertex3f(5, -5, 0);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 }
 
+void Tablero::dibujaPiezas(int i, int j)
+{
+	cout << "prueba" << endl;
+	char color = Tab[i][j].p->getColor();
+	cout << color << endl;
+	char tipo = Tab[i][j].p->getTipo();
+	cout << tipo << endl;
+	
+
+	/*if (color == B && tipo != V) {
+		switch (tipo) {
+		case T:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("torreblanca.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case C:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("caballoblanco.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		case A:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("alfilblanco.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		case Q:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("reinablanca.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		case K:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("reyblanco.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		case P:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("peonblanco.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		}
+	}
+	else if (color == N && tipo != V) {
+		switch (tipo) {
+		case T:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("torrenegra.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case C:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("caballonegro.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case A:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("alfilnegro.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case Q:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("reinanegra.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case K:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("reynegro.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+
+		case P:
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("peonnegro.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+			glTexCoord2d(0, 0); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 0); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y - 0.6, 0);
+			glTexCoord2d(1, 1); glVertex3f(Tab[i][j].PosReal.x + 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glTexCoord2d(0, 1); glVertex3f(Tab[i][j].PosReal.x - 0.6, Tab[i][j].PosReal.y + 0.6, 0);
+			glEnd();
+			glEnable(GL_LIGHTING);
+			glDisable(GL_TEXTURE_2D);
+			break;
+		}
+	}
+	*/
+}
 
 
 
