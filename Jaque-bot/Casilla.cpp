@@ -52,8 +52,3 @@ bool Casilla::casillaVacia() {
 
 	return ocupacion;
 }
-
-}
-
-
-

@@ -14,3 +14,5 @@ bool Torre::movimientoValido(V2D origen, V2D destino) {
 	else return false;
 
 }
+
+bool Torre::comerPeon(V2D origen, V2D destino) { return false; }

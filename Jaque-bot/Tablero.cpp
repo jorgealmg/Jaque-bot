@@ -184,12 +184,13 @@ void Tablero::dibuja()
 
 void Tablero::dibujaPiezas(int i, int j)
 {
-	cout << "prueba" << endl;
-	char color = Tab[i][j].p->getColor();
-	cout << color << endl;
-	char tipo = Tab[i][j].p->getTipo();
-	cout << tipo << endl;
-	
+	if (Tab[i][j].p != NULL) {
+		cout << "prueba" << endl;
+		char color = Tab[i][j].p->getColor();
+		cout << color << endl;
+		char tipo = Tab[i][j].p->getTipo();
+		cout << tipo << endl;
+	}
 
 	/*if (color == B && tipo != V) {
 		switch (tipo) {

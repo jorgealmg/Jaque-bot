@@ -18,3 +18,5 @@ bool Reina::movimientoValido(V2D origen, V2D destino) {
 	else 
 		return false;
 }
+
+bool Reina::comerPeon(V2D origen, V2D destino) { return false; }

@@ -71,10 +71,5 @@ void Coordinador::dibuja()
 		mundo.dibuja();
 		tablero.dibuja();
 	}
-	else if (estado == JvAI)
-	{
-	
-	}
-
-	}
+	else if (estado == JvAI) {}
 }

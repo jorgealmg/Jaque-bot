@@ -12,3 +12,5 @@ bool Caballo :: movimientoValido(V2D origen, V2D destino) {
 	else
 		return false;
 }
+
+bool Caballo::comerPeon(V2D origen, V2D destino) { return false; }
