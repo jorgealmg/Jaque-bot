@@ -578,7 +578,7 @@ void Tablero::Mueve(Casilla* origen, Casilla* destino) {
 		}
 
 		else if (origen->p->getTipo() == 'P') {
-			if (origen->p->comerPeon(origen->PosReal, destino->PosReal) == true) {
+			if (origen->p->comerPeon(origen->PosReal, destino->PosReal, origen->p) == true) {
 				if (destino->casillaVacia() == false) {
 					comerPieza(origen, destino);
 					if (origen->p->getColor() == 'B' && destino->PosReal.y == 7)  //coronar
