@@ -20,6 +20,7 @@ public:
 	//virtual ~Pieza();
 	virtual void mueve() = 0;
 	virtual bool movimientoValido(V2D origen, V2D destino) = 0;
+	virtual bool comerPeon(V2D origen, V2D destino) = 0;
 	char getColor();
 	char getTipo();
 	void dibuja(V2D pos, Pieza* p);

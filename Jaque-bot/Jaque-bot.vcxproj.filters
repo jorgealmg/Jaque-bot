@@ -18,9 +18,6 @@
     <ClCompile Include="Jaque-bot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tablero.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Mundo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -61,6 +58,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Regla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PInicio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

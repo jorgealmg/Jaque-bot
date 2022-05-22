@@ -5,6 +5,7 @@ Tablero::Tablero() :tablero0("tablero0.png", 1, 1, 220)
 	setLado(10);
 	tablero0.setCenter(0.0, 0.0);
 	tablero0.setSize(lado, lado);
+	movimiento = 0;
 
 	for (int i = 0; i < 8;i++)
 	{
@@ -552,20 +553,84 @@ bool Tablero::obstaculo(V2D origen, V2D destino) {
 }
 
 void Tablero::Mueve(Casilla *origen,Casilla* destino) {
-	if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
-		destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
-		origen->setPiezaVacia(V);
+
+	if (origen->p->getTipo() != P) {
+		if ((origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true) && obstaculo(origen->p->pos, destino->p->pos) == false) {
+			if (destino->casillaVacia() == false)
+				comerPieza(origen, destino);
+			else {
+				destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+				origen->setPiezaVacia(V);
+			}
+		}
 	}
 
-	if (destino->casillaVacia() == false)
-		comerPieza(origen, destino);
+	else if (origen->p->getTipo() == P) {
+		if (origen->p->comerPeon(origen->PosReal, destino->PosReal) == true) {
+			if (destino->casillaVacia() == false) {
+				comerPieza(origen, destino);
+				if (origen->p->getColor() == B && destino->PosReal.y == 7)  //coronar
+					coronar(destino);
+				else if (origen->p->getColor() == N && destino->PosReal.y == 0)
+					coronar(destino);
+				}
+			}
+		}
+
+		else if (origen->p->movimientoValido(origen->PosReal, destino->PosReal) == true  && obstaculo(origen->p->pos, destino->p->pos) == false){
+			if (destino->casillaVacia() == true) {
+				destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
+				origen->setPiezaVacia(V);
+				if (origen->p->getColor() == B && destino->PosReal.y == 7)  //coronar
+					coronar(destino);
+				else if (origen->p->getColor() == N && destino->PosReal.y == 0)
+					coronar(destino);
+			}
+	}
+
 }
 
+void Tablero::coronar(Casilla* c) {
+	cout << "Has coronado. Pulsa en mayúsculas la incial de la pieza que quieras" << endl;
+	char letra;
+	cin >> letra;
+	switch (letra) {
+	case 'R':
+		c->setPieza(c->p, Q, c->p->color);
+	case 'A':
+		c->setPieza(c->p, A, c->p->color);
+	case 'T':
+		c->setPieza(c->p, T, c->p->color);
+	case 'C':
+		c->setPieza(c->p, C, c->p->color);
+	}
+}
 
 void Tablero::comerPieza(Casilla* origen, Casilla* destino)
 {
+	ETSIDI::play("sonidos/muerte.wav");
 	delete& destino->p;
 	destino->setPieza(origen->p, origen->p->tipo, origen->p->color);
 	origen->setPiezaVacia(V);
+}
 
+
+bool Tablero::setTurno(int *movimiento, Casilla * origen) {
+
+	if ((*movimiento % 2 == 0) && origen->p->getColor() == N)  //mueven negras
+		return true;
+	else if ((*movimiento % 2 != 0) && origen->p->getColor() == B) //mueven blancas
+		return true;
+	else return false;
+
+}
+
+void Tablero::hacerMovimiento(Casilla* origen, Casilla* destino) {
+	if (setTurno(&movimiento, origen)) {
+		Mueve(origen, destino);
+		ETSIDI::play("sonidos/chess.wav");
+		movimiento++;
+	}
+	else
+		cout << "movimiento incorrecto" << endl;
 }
