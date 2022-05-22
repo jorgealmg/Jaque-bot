@@ -1,5 +1,6 @@
 #include "Rey.h"
 
+
 void Rey::mueve() {}
 
 bool Rey::movimientoValido(V2D origen, V2D destino) {
@@ -15,4 +16,10 @@ bool Rey::movimientoValido(V2D origen, V2D destino) {
 	else
 		return false;
 
+
 }
+
+}
+
+bool Rey::comerPeon(V2D origen, V2D destino) { return false; }
+

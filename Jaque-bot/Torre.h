@@ -4,7 +4,8 @@ class Torre :
     public Pieza
 {
 public:
-    Torre(char c, char t) : Pieza(c, t) {};
+    Torre(enum color c) : Pieza(c, T) {};
     void mueve();
+    bool movimientoValido(V2D origen, V2D destino);
+    bool comerPeon(V2D origen, V2D destino);
 };
-
