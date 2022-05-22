@@ -28,3 +28,8 @@ void Casilla::setPosicion(int l, int n)
 	numero = n;
 
 }
+
+bool Casilla::casillaVacia() {
+
+	return ocupacion;
+}
