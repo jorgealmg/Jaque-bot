@@ -65,10 +65,6 @@ void OnDraw(void)
 
 	coordin.dibuja();
 
-	glTranslatef(-4.2, 3, 0);
-	glColor3ub(255, 255, 0);
-	glutSolidCube(1.1);
-	glTranslatef(4.2, -3, 0);
 	glutPostRedisplay();
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
