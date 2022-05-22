@@ -72,5 +72,5 @@ void Coordinador::dibuja()
 	
 	}
 
-	}
 }
+
