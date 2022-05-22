@@ -14,6 +14,7 @@ void Coordinador::tecla(unsigned char key)
 {
 	if (estado == INICIO) {
 		if (key == 'q') {
+
 			tablero.inicializa();
 			mundo.inicializa();
 			estado = JvJ;
@@ -63,9 +64,13 @@ void Coordinador::dibuja()
 
 	}
 	else if (estado == JvJ) {
-		
 		mundo.dibuja();
 		tablero.dibuja();
 	}
+	else if (estado == JvAI)
+	{
+	
+	}
 
+	}
 }
