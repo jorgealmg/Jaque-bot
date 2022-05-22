@@ -88,7 +88,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< Updated upstream
       <AdditionalIncludeDirectories>lib src</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Laura\Downloads\Jaque-bot (1)\Jaque-bot\Jaque-bot\lib</AdditionalIncludeDirectories>
+>>>>>>> Stashed changes
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
