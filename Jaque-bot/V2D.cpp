@@ -6,4 +6,9 @@ V2D V2D:: operator - (V2D v) {
 	res.y = y - v.y;
 	return res;
 
+
+}
+
+bool V2D:: operator==(V2D v) {
+	if (x == v.x && y == v.y)return true;
 }

@@ -20,5 +20,8 @@ class Regla
 	//static bool casillaocupada(int x, int y, Tablero& tab);
 	static void borrarpieza(Pieza& p);
 
-	static void jaque(Peon& pe, Rey& ry); //jaque
+	static bool jaque(Rey& ry, Pieza& p); //jaque
+	static bool jaqueReal(Rey& ry, Pieza& p);
+	static bool enroqueCorto(Rey& ry, Torre& t);
+	static bool enroqueLargo(Rey& ry, Torre& t);
 };

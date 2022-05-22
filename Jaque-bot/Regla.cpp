@@ -1,39 +1,50 @@
 #include "Regla.h"
 
-void Regla::comer(Peon& pe, Pieza& p)
+
+bool Regla::jaque(Rey& ry, Pieza& p)
 {
-	if (pe.pos.x == p.pos.x && pe.pos.y == p.pos.y) p.getColor(); //Habria que sustituir getColor por una funcion que elemine la pieza
+	int difx = abs(p.pos.x - ry.pos.x);
+	int dify = abs(p.pos.y - ry.pos.y);
+
+	if (ry.getColor() != p.getColor()) {
+		if (p.getTipo() == 'P' && ((p.pos.x == ry.pos.x + 1 && p.pos.y == ry.pos.y + 1) || (p.pos.x == ry.pos.x + 1 && p.pos.y == ry.pos.y - 1) ||
+			(p.pos.x == ry.pos.x - 1 && p.pos.y == ry.pos.y + 1) || (p.pos.x == ry.pos.x - 1 && p.pos.y == ry.pos.y - 1))) return true; //jaque con el peon
+		else if (p.getTipo() == 'T' && (p.pos.x == ry.pos.x || p.pos.y == ry.pos.y)) return true; // jaque con la torre
+		else if (p.getTipo() == 'A' && difx == dify) return true; // jaque con el alfil
+		else if (p.getTipo() == 'Q' && (difx == dify || p.pos.x == ry.pos.x || p.pos.y == ry.pos.y)) return true; //jaque con la dama
+		else if (p.getTipo() == 'C' && ((difx == 2 && dify == 1)|| (difx == 1 && dify == 2))) return true; //jaque con el caballo
+	}
 }
 
-void Regla::comer(Torre& t, Pieza& p)
+bool Regla::jaqueReal(Rey& ry, Pieza& p)
 {
-	if (t.pos.x == p.pos.x && t.pos.y == p.pos.y) p.getColor();
+	Tablero t;
+	if (jaque(ry, p) && t.obstaculo(ry.pos, p.pos) == false) cout << "Jaque" << endl; return true;
 }
 
-void Regla::comer(Alfil& a, Pieza& p)
+bool Regla::enroqueCorto(Rey& ry, Torre& t)
 {
-	if (a.pos.x == p.pos.x && a.pos.y == p.pos.y) p.getColor();
+	Tablero ta;
+	if (ry.getColor() == t.getColor() == 'B') {
+		if (ry.pos == (3, 0) && t.pos == (6, 0) && ta.obstaculo(ry.pos, t.pos) == false) return true; // se puede enrocar
+	}
+	else if (ry.getColor() == t.getColor() == 'N') {
+		if (ry.pos == (3, 7) && t.pos == (6, 7) && ta.obstaculo(ry.pos, t.pos) == false) return true; //se puede enrocar
+	}
 }
 
-void Regla::comer(Caballo& c, Pieza& p)
+bool Regla::enroqueLargo(Rey& ry, Torre& t)
 {
-	if (c.pos.x == p.pos.x && c.pos.y == p.pos.y) p.getColor();
+	Tablero ta;
+	if (ry.getColor() == t.getColor() == 'B') {
+		if (ry.pos == (3, 0) && t.pos == (0, 0) && ta.obstaculo(ry.pos, t.pos) == false) return true; // se puede enrocar
+	}
+	else if (ry.getColor() == t.getColor() == 'N') {
+		if (ry.pos == (3, 7) && t.pos == (0, 7) && ta.obstaculo(ry.pos, t.pos) == false) return true; //se puede enrocar
+	}
 }
 
-void Regla::comer(Reina& r, Pieza& p)
-{
-	if (r.pos.x == p.pos.x && r.pos.y == p.pos.y) p.getColor();
-}
 
-void Regla::comer(Rey& ry, Pieza& p)
-{
-	if (ry.pos.x == p.pos.x && ry.pos.y == p.pos.y) p.getColor();
-}
-
-void Regla::jaque(Peon& pe, Rey& ry)
-{
-
-}
 
 /*bool Regla::casillaocupada(int x, int y, Tablero& tab) {
 	if (tab[x][y] == '') return true;

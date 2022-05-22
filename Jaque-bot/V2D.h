@@ -6,5 +6,8 @@ public:
 	int x, y;
 
 	V2D operator - (V2D v);
+
+	bool operator == (V2D v);
+
 };
 

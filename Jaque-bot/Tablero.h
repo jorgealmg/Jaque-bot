@@ -38,6 +38,10 @@ public:
 
 	Casilla Tab[8][8];
 
+
+	bool obstaculo(V2D origen, V2D destino);
+
+
 	Casilla* getCasilla(V2D pos);
 
 	void inicializa();
@@ -53,5 +57,6 @@ public:
 	bool setTurno(int *movimiento, Casilla *origen);
 
 	void hacerMovimiento(Casilla* origen, Casilla* destino);
+
 
 };
